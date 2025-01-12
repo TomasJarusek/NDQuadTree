@@ -48,8 +48,8 @@ public:
 private:
 
 	// Copy constructor/assignment doesn't make sense within this context.
-	PointerManager_Static(const PointerManager_Static& pointerManager) = default;
-	PointerManager_Static& operator=(const PointerManager_Static& pointerManager) = default;
+	PointerManager_Static(const PointerManager_Static& pointerManager) = delete;
+	PointerManager_Static& operator=(const PointerManager_Static& pointerManager) = delete;
 
 	// Deallocation of all internal memory.
 	void DeallocateMemory();
@@ -254,8 +254,8 @@ public:
 private:
 
 	// Copy constructor/assignment doesn't make sense within this context.
-	PointerManager_Unlimited(const PointerManager_Unlimited& pointerManager_Unlimited) = default;
-	PointerManager_Unlimited& operator=(const PointerManager_Unlimited& pointerManager_Unlimited) = default;
+	PointerManager_Unlimited(const PointerManager_Unlimited& pointerManager_Unlimited) = delete;
+	PointerManager_Unlimited& operator=(const PointerManager_Unlimited& pointerManager_Unlimited) = delete;
 
 	// Deallocation of all internal memory.
 	void DeallocateMemory();

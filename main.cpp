@@ -65,7 +65,6 @@ int main()
 
 	// Tree operations.
 
-
 	// Insertion.
 	[[maybe_unused]] bool returnBool = true;
 	coordType elementX = coordType(0.0);
@@ -216,13 +215,14 @@ int main()
 	elementBoundaryMaxY = coordType(-475.0);
 	returnBool = quadTree2D.DeleteNDElement(6, elementBoundaryMinX, elementBoundaryMaxX, elementBoundaryMinY, elementBoundaryMaxY);
 
+	
+	// Queries.
 
 	// Point query.
 	coordType queryPointX = coordType(0.0);
 	coordType queryPointY = coordType(0.0);
 	returnStrings = quadTree2D.PointQuery(queryPointX, queryPointY);
 	PrintStringVector(returnStrings);
-
 
 	// N-dimensional query.
 	coordType queryBoundaryMinX = coordType(-80.0);
@@ -231,7 +231,6 @@ int main()
 	coordType queryBoundaryMaxY = coordType(80.0);
 	returnStrings = quadTree2D.NDQuery(queryBoundaryMinX, queryBoundaryMaxX, queryBoundaryMinY, queryBoundaryMaxY);
 	PrintStringVector(returnStrings);
-
 
 	// Closest element query.
 	coordType singleIterationStep = coordType(100.0);
@@ -250,7 +249,6 @@ int main()
 	returnPairVector = quadTree2D.QueryNClosestElements(numberOfClosestElements, singleIterationStep, queryPointX, queryPointY);
 	PrintPairVector(returnPairVector);
 
-
 	// Radius query.
 	coordType queryRadius = coordType(110.0);
 	queryPointX = coordType(0.0);
@@ -266,82 +264,9 @@ int main()
 	returnStrings = quadTree2D.RayQuery(rayFirstPointX, rayFirstPointY, raySecondPointX, raySecondPointY);
 	PrintStringVector(returnStrings);
 
-	QuadTreeTester().TestTree();
 
-
-
-
-
-
-
-
-	// Point query.
-	queryPointX = coordType(0.0);
-	queryPointY = coordType(0.0);
-	returnStrings = quadTree2D.PointQueryAndDelete(queryPointX, queryPointY);
-	PrintStringVector(returnStrings);
-
-
-	// N-dimensional query.
-	queryBoundaryMinX = coordType(-80.0);
-	queryBoundaryMaxX = coordType(80.0);
-	queryBoundaryMinY = coordType(-80.0);
-	queryBoundaryMaxY = coordType(80.0);
-	returnStrings = quadTree2D.NDQueryAndDelete(queryBoundaryMinX, queryBoundaryMaxX, queryBoundaryMinY, queryBoundaryMaxY);
-	PrintStringVector(returnStrings);
-
-
-	// Closest element query.
-	singleIterationStep = coordType(100.0);
-	returnPair;
-	queryPointX = coordType(1000.0);
-	queryPointY = coordType(1000.0);
-	returnPair = quadTree2D.QueryClosestElementAndDelete(singleIterationStep, queryPointX, queryPointY);
-	PrintPair(returnPair);
-
-	// N closest elements query.
-	numberOfClosestElements = 4;
-	singleIterationStep = coordType(100.0);
-	returnPairVector;
-	queryPointX = coordType(1000.0);
-	queryPointY = coordType(1000.0);
-	returnPairVector = quadTree2D.QueryNClosestElementsAndDelete(numberOfClosestElements, singleIterationStep, queryPointX, queryPointY);
-	PrintPairVector(returnPairVector);
-
-
-	// Radius query.
-	queryRadius = coordType(110.0);
-	queryPointX = coordType(0.0);
-	queryPointY = coordType(0.0);
-	returnPairVector = quadTree2D.QueryElementsWithinRadiusAndDelete(queryRadius, queryPointX, queryPointY);
-	PrintPairVector(returnPairVector);
-
-	// Ray query.
-	rayFirstPointX = coordType(-1000.0);
-	rayFirstPointY = coordType(-1000.0);
-	raySecondPointX = coordType(1000.0);
-	raySecondPointY = coordType(1000.0);
-	returnStrings = quadTree2D.RayQueryAndDelete(rayFirstPointX, rayFirstPointY, raySecondPointX, raySecondPointY);
-	PrintStringVector(returnStrings);
-
-	size_t a = quadTree2D.Size();
-	size_t b = quadTree2D.UniqueSize();
-	quadTree2D.Clear();
-
-	std::cout << a + b << std::endl;
-
-	return 0;
-
-
-
-
-
-
-
-
-
-
-
+	// Command to run the full automated test of the quad tree class.
+	// QuadTreeTester().TestTree();
 
 	return 0;
 }

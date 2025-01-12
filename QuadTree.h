@@ -311,7 +311,6 @@ public:
 	// True if tree structure is valid, false otherwise.
 	bool ValidateTree() const;
 
-
 private:
 
 	// Calculates start and end radius for distace query.
